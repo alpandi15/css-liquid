@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0 auto;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 800px;
+            height: 100vh;
+            border: 1px solid #cecece;
+            padding: 10px;
+        }
+
+        .btn {
+            text-transform: uppercase;
+            padding: 0;
+            width: 200px;
+            height: 50px;
+            border-radius: 5px;
+            border-style: none;
+            cursor: pointer;
+        }
+
+        button:focus {
+            outline: none;
+            box-shadow: 0 0 5px 2px rgb(46 163 185 / 0.5)
+        }
+
+        .btn.btn-liquid {
+            color: white;
+            background-color: rgb(28, 182, 149);
+        }
+
+        /* .btn.btn-liquid::after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: rgb(255, 255, 255);
+            left: 0;
+            top: 10%;
+        } */
+        .btn.btn-liquid::before,
+        .btn.btn-liquid::after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 200px;
+            height: 200px;
+        }
+        .btn-liquid::before {
+            border-radius: 45%;
+            background: #4973ff;
+            animation: animate 5s linear infinite;
+        }
+        .btn-liquid::after {
+            border-radius: 40%;
+            background: rgba(73, 115, 255, 0.5);
+            animation: animate 10s linear infinite;
+        }
+
+        /* .btn.btn-liquid:hover .btn.btn-liquid::after{
+            top: -120px;
+        } */
+      @keyframes animate {
+        0% {
+          transform: translate(-25%, 0%) rotate(0deg);
+        }
+        100% {
+          transform: translate(-25%, 0%) rotate(360deg);
+        }
+      }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="btn btn-liquid">Button</button>
+    </div>
+</body>
+</html>
